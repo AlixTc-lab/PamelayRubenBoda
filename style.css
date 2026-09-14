@@ -1,0 +1,1433 @@
+/*======================================================
+1. VARIABLES
+======================================================*/
+
+:root{
+
+    /* Fondo principal y sombras oscuras */
+    --negro-azabache: #0B0809;
+
+    /* Tonos de Rosas */
+    --carmesi: #A8091E;        /* Pétalos vibrantes */
+    --borgona: #50050C;        /* Sombras oscuras / Flores / Tela */
+
+    /* Dorados */
+    --dorado: #D4AF37;         /* Tipografía principal y marcos */
+    --dorado-claro: #F4E291;   /* Brillos y destellos */
+
+    /* Acento Cálido */
+    --ambar: #E65A19;          /* Luz de vela y destellos */
+
+    /* Compatibilidad de variables con la estructura previa */
+    --vino: #A8091E;
+    --vino-claro: #D4AF37;
+    --vino-suave: #50050C;
+
+    /* Tipografía y Neutros */
+    --titulo: #D4AF37;
+    --texto: #F4E291;
+    --texto-secundario: rgba(244, 226, 145, 0.8);
+    --blanco: #FFFFFF;
+    --gris: rgba(255, 255, 255, 0.75);
+
+    /* Sombras */
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+    --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.25);
+
+}
+
+/*======================================================
+2. RESET
+======================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--dorado-claro);
+    background-color: var(--negro-azabache);
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/*======================================================
+3. HERO
+======================================================*/
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background-image:url("HERO2.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    padding:40px;
+}
+
+.detalle{
+    
+   
+    color:var(--carmesi);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:25px;
+    box-shadow: 0 0 15px rgba(230, 90, 25, 0.3);
+}
+
+
+
+.linea{
+    width:140px;
+    height:2px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--carmesi),
+        var(--dorado),
+        var(--ambar),
+        transparent
+    );
+    margin:25px auto;
+}
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 130px;
+    font-weight: 100;
+    color: var(--negro-azabache);
+
+    /* Múltiples capas de sombra para crear la luz roja y dorada */
+    text-shadow: 
+        -1px -1px 0 var(--carmesi),
+         1px -1px 0 var(--carmesi),
+        -1px  1px 0 var(--carmesi),
+         1px  1px 0 var(--carmesi),
+         0 0 20px rgba(168, 9, 30, 0.8),
+         0 0 40px rgba(212, 175, 55, 0.5);
+
+    animation: fadeDown 2s;
+}
+
+.hero p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    color: var(--negro-azabache);
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px var(--carmesi), 0 0 15px rgba(212, 175, 55, 0.6);
+    animation: fadeUp 2s;
+}
+
+/*======================================================
+4. CUENTA REGRESIVA
+======================================================*/
+
+.contador{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.contenedor{
+    max-width:1100px;
+    margin:auto;
+}
+
+.subtitulo{
+    color:var(--dorado);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.contador h2{
+    margin:15px 0;
+    font-size:52px;
+    font-family:"Cormorant Garamond",serif;
+    color:var(--dorado);
+    text-shadow: 0 0 10px rgba(168, 9, 30, 0.4);
+}
+
+.texto-contador{
+    max-width:650px;
+    margin:0 auto 55px;
+    color:var(--dorado-claro);
+}
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.tiempo{
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.8),
+            rgba(80, 5, 12, 0.7)
+        ),
+        url("back.jpg");
+
+    background-size: cover;
+    background-position: center;
+    border:1px solid rgba(212, 175, 55, 0.5);
+    border-radius:30px;
+    padding:35px 20px;
+    box-shadow:var(--shadow-gold);
+    transition:.35s;
+}
+
+.tiempo:hover{
+    transform:translateY(-8px);
+    border-color: var(--dorado-claro);
+    box-shadow: 0 10px 30px rgba(230, 90, 25, 0.4);
+}
+
+.tiempo span{
+    display:block;
+    font-size:70px;
+    font-weight:700;
+    color:var(--dorado-claro);
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    line-height:1;
+}
+
+.tiempo small{
+    display:block;
+    margin-top:15px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:13px;
+    color:var(--dorado);
+}
+
+/*======================================================
+5. ANIMACIONES
+======================================================*/
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/*======================================================
+6. RESPONSIVE
+======================================================*/
+
+@media(max-width:900px){
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .hero{
+        height:100svh;
+    }
+
+    .hero h1{
+        font-size:82px;
+    }
+
+    .hero p{
+        font-size:24px;
+    }
+
+    .detalle{
+        font-size:11px;
+        letter-spacing:3px;
+    }
+}
+
+@media(max-width:600px){
+    .contador{
+        padding:90px 20px;
+    }
+
+    .contador h2{
+        font-size:38px;
+    }
+
+    .countdown{
+        gap:15px;
+    }
+
+    .tiempo{
+        padding:25px 15px;
+    }
+
+    .tiempo span{
+        font-size:48px;
+    }
+}
+
+/*======================================================
+GALERÍA
+======================================================*/
+
+.galeria {
+    padding: 120px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.titulo-seccion {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.titulo-seccion span {
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.titulo-seccion h2 {
+    margin-top:15px;
+    font-family:"Cormorant Garamond", serif;
+    font-size:55px;
+    color:var(--dorado);
+    text-shadow: 0 0 15px rgba(168, 9, 30, 0.5);
+}
+
+.titulo-seccion p {
+    margin-top:20px;
+    color:var(--dorado-claro);
+    opacity:.9;
+}
+
+/*======================================================
+CARRUSEL GALERÍA
+======================================================*/
+
+.miGaleria{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    padding-bottom:70px;
+}
+
+.swiper-wrapper{
+    align-items:center;
+}
+
+.swiper-slide{
+    height:520px;
+    border-radius:30px;
+    overflow:hidden;
+    background:var(--borgona);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition:.4s ease;
+}
+
+.swiper-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.swiper-slide-active{
+    transform:scale(1.02);
+    border-color: var(--dorado);
+    box-shadow: 0 0 25px rgba(168, 9, 30, 0.6);
+}
+
+/* puntos */
+
+.swiper-pagination-bullet{
+    background:var(--dorado);
+    opacity:.5;
+}
+
+.swiper-pagination-bullet-active{
+    width:28px;
+    border-radius:10px;
+    background:var(--ambar);
+    opacity:1;
+}
+
+/*======================================================
+TABLET / CELULAR GALERÍA
+======================================================*/
+
+@media(max-width:900px){
+    .miGaleria{
+        max-width:95%;
+    }
+
+    .swiper-slide{
+        height:420px;
+    }
+}
+
+@media(max-width:600px){
+    .titulo-seccion h2{
+        font-size:40px;
+    }
+
+    .miGaleria{
+        max-width:100%;
+        padding-bottom:50px;
+    }
+
+    .swiper-slide{
+        height:330px;
+        border-radius:20px;
+    }
+
+    .swiper-slide-active{
+        transform:scale(1);
+    }
+}
+
+@media(min-width:1400px){
+    .miGaleria{
+        max-width:1200px;
+    }
+
+    .swiper-slide{
+        height:560px;
+    }
+}
+
+/*======================================================
+FLECHAS DE NAVEGACIÓN SWIPER
+======================================================*/
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--dorado-claro) !important;
+    background: rgba(11, 8, 9, 0.8);
+    border: 1px solid var(--dorado);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--carmesi);
+    color: var(--blanco) !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--ambar);
+}
+
+@media(max-width: 600px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+/*======================================================
+LUGARES
+======================================================*/
+
+.lugares{
+    padding:120px 20px;
+}
+
+.lugares-container{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.lugar-card{
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.85),
+            rgba(80, 5, 12, 0.75)
+        ),
+        url("back.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    backdrop-filter:blur(18px);
+    border-radius:35px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(212, 175, 55, 0.4);
+    transition:.4s;
+}
+
+.lugar-card:hover{
+    transform:translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 30px rgba(168, 9, 30, 0.4);
+}
+
+.imagen-lugar{
+    height:330px;
+    overflow:hidden;
+}
+
+.imagen-lugar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.lugar-card:hover img{
+    transform:scale(1.08);
+}
+
+.info-lugar{
+    text-align:center;
+    padding:35px 30px 40px;
+}
+
+.icono{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        var(--carmesi),
+        var(--ambar)
+    );
+    color: var(--blanco);
+    font-size:28px;
+    box-shadow: 0 0 15px rgba(230, 90, 25, 0.5);
+}
+
+.info-lugar h3{
+    margin:20px 0 15px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    color:var(--dorado);
+}
+
+.info-lugar p{
+    line-height:1.8;
+    font-size:20px;
+    color:var(--dorado-claro);
+    margin-bottom:25px;
+}
+
+/* Botón */
+
+.btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:20px;
+    padding:14px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    color:var(--blanco);
+    font-weight:600;
+    background:linear-gradient(
+        135deg,
+        var(--carmesi),
+        var(--borgona)
+    );
+    border:1px solid var(--dorado);
+    box-shadow: 0 8px 18px rgba(168, 9, 30, 0.4);
+    transition:all .35s ease;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:linear-gradient(
+        135deg,
+        var(--ambar),
+        var(--carmesi)
+    );
+    box-shadow:
+        0 15px 30px rgba(168, 9, 30, 0.6),
+        0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive Lugares */
+
+@media(max-width:900px){
+    .lugares-container{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+    .imagen-lugar{
+        height:250px;
+    }
+
+    .info-lugar h3{
+        font-size:32px;
+    }
+}
+
+/*======================================================
+PADRES Y PADRINOS
+======================================================*/
+
+.familia{
+    padding:120px 20px;
+    position:relative;
+}
+
+.familia-contenedor{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+}
+
+.familia-card{
+    position:relative;
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.85),
+            rgba(80, 5, 12, 0.75)
+        ),
+        url("back.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    backdrop-filter:blur(18px);
+    border-radius:35px;
+    padding:45px 35px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(212, 175, 55, 0.4);
+    overflow:hidden;
+    transition:.4s;
+}
+
+.familia-card:hover{
+    transform:translateY(-8px);
+    border-color: var(--dorado);
+}
+
+.familia-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:var(--carmesi);
+    opacity:.2;
+    border-radius:50%;
+    top:-80px;
+    right:-80px;
+}
+
+.decoracion{
+    width:65px;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        var(--carmesi),
+        var(--ambar)
+    );
+    color:white;
+    font-size:30px;
+    box-shadow: 0 0 15px rgba(230, 90, 25, 0.4);
+}
+
+.familia-card h3{
+    margin:25px 0 35px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:42px;
+    color:var(--dorado);
+    display:inline-block;
+    padding:10px 35px;
+}
+
+.persona span{
+    font-size:20px;
+    color:var(--dorado-claro);
+}
+
+.persona h4{
+    margin-top:10px;
+    font-size:25px;
+    font-weight:500;
+    color:var(--dorado);
+    display:inline-block;
+    padding:8px 25px;
+}
+
+.persona p{
+    margin-top:5px;
+    color:var(--texto-secundario);
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.separador{
+    width:80px;
+    height:2px;
+    margin:25px auto;
+    background:linear-gradient(
+        to right,
+        var(--carmesi),
+        var(--dorado)
+    );
+}
+
+@media(max-width:850px){
+    .familia-contenedor{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+    .familia-card h3{
+        font-size:35px;
+    }
+
+    .persona h4{
+        font-size:22px;
+    }
+}
+
+/*======================================================
+CÓDIGO DE VESTIMENTA
+======================================================*/
+
+.vestimenta{
+    padding:120px 20px;
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.vestimenta::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:var(--carmesi);
+    opacity:.15;
+    filter:blur(90px);
+    border-radius:50%;
+}
+
+.vestimenta-card{
+    position:relative;
+    max-width:850px;
+    width:100%;
+    text-align:center;
+    padding:70px 50px;
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.85),
+            rgba(80, 5, 12, 0.75)
+        ),
+        url("back.jpg");
+    background-size:cover;
+    background-position:center;
+    backdrop-filter:blur(20px);
+    border-radius:45px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(212, 175, 55, 0.4);
+}
+
+.vestimenta-icono{
+    width:90px;
+    height:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    border-radius:50%;
+    font-size:45px;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        var(--carmesi),
+        var(--ambar)
+    );
+    box-shadow: 0 10px 25px rgba(168, 9, 30, 0.4);
+}
+
+.vestimenta-card .subtitulo{
+    display:block;
+    margin-top:35px;
+    letter-spacing:5px;
+    color:var(--dorado);
+}
+
+.vestimenta-card h2{
+    margin:15px 0 25px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:60px;
+    color:var(--dorado);
+    display:inline-block;
+    padding:15px 35px;
+}
+
+.descripcion-vestimenta{
+    max-width:550px;
+    margin:auto;
+    padding:20px 30px;
+    line-height:1.9;
+    color:var(--dorado-claro);
+    font-size: 20px;
+    background:rgba(11, 8, 9, 0.7);
+    backdrop-filter:blur(8px);
+    border-radius:25px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.vestimenta-opciones{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:45px;
+}
+
+.vestimenta-item{
+    padding:30px;
+    background:rgba(11, 8, 9, 0.6);
+    backdrop-filter:blur(8px);
+    border-radius:35px;
+    border:1px solid rgba(212, 175, 55, 0.3);
+}
+
+.vestimenta-item i{
+    font-size:45px;
+    color:var(--ambar);
+}
+
+.vestimenta-item h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    color:var(--dorado);
+}
+
+.vestimenta-item p{
+    color:var(--dorado-claro);
+    line-height:1.8;
+    font-size:20px;
+}
+
+.decoracion-vestimenta{
+    margin-top:35px;
+    color:var(--dorado);
+    font-size:25px;
+    letter-spacing:12px;
+}
+
+@media(max-width:600px){
+    .vestimenta-card{
+        padding:50px 25px;
+    }
+
+    .vestimenta-card h2{
+        font-size:42px;
+    }
+
+    .vestimenta-opciones{
+        grid-template-columns:1fr;
+    }
+}
+
+.colores-evitar{
+    margin-top:25px;
+}
+
+.colores-evitar h4{
+    margin-bottom:20px;
+    color:var(--dorado);
+    font-size:18px;
+    font-weight:600;
+}
+
+.paleta-colores{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.color-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.color{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:2px solid rgba(212, 175, 55, 0.6);
+    box-shadow:0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.color-item small{
+    margin-top:8px;
+    font-size:12px;
+    color:var(--dorado-claro);
+}
+
+.rojo{ background:#A8091E; }
+.blanco{ background:#FFFFFF; }
+.ivory{ background:#FFFFF0; }
+.beige{ background:#F5F5DC; }
+.perla{ background:#E7E2DA; }
+.vino{ background:#50050C; }
+
+/*======================================================
+MESA DE REGALOS
+======================================================*/
+
+.regalos{
+    padding:120px 20px;
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.regalos::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:var(--carmesi);
+    opacity:.15;
+    filter:blur(90px);
+    border-radius:50%;
+}
+
+.regalos-card{
+    position:relative;
+    max-width:750px;
+    width:100%;
+    text-align:center;
+    padding:70px 50px;
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.85),
+            rgba(80, 5, 12, 0.75)
+        ),
+        url("back.jpg");
+    background-size:cover;
+    background-position:center;
+    backdrop-filter:blur(20px);
+    border-radius:45px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(212, 175, 55, 0.4);
+}
+
+.regalo-icono{
+    width:90px;
+    height:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    border-radius:50%;
+    font-size:45px;
+    color: var(--blanco);
+    background:linear-gradient(
+        135deg,
+        var(--carmesi),
+        var(--ambar)
+    );
+    box-shadow:0 10px 25px rgba(230, 90, 25, 0.35);
+}
+
+.regalos-card .subtitulo{
+    display:block;
+    margin-top:35px;
+}
+
+.regalos-card h2{
+    margin:15px 0 25px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:60px;
+    color:var(--dorado);
+    display:inline-block;
+    padding:15px 35px;
+}
+
+.regalos-card p{
+    max-width:550px;
+    margin:auto;
+    padding:20px 30px;
+    line-height:1.9;
+    color:var(--dorado-claro);
+    font-size:20px;
+    background:rgba(11, 8, 9, 0.7);
+    backdrop-filter:blur(8px);
+    border-radius:25px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.decoracion-regalo{
+    margin-top:35px;
+    color:var(--dorado);
+    font-size:25px;
+    letter-spacing:12px;
+}
+
+@media(max-width:600px){
+    .regalos-card{
+        padding:50px 25px;
+    }
+
+    .regalos-card h2{
+        font-size:42px;
+    }
+
+    .regalos-card p{
+        font-size:15px;
+    }
+}
+
+/*======================================================
+CONFIRMACION
+======================================================*/
+
+.confirmacion{
+    padding:120px 20px;
+}
+
+.acciones-evento{
+    width:100%;
+    margin:60px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.accion-card{
+    position:relative;
+    width:100%;
+    max-width:750px;
+    margin:auto;
+    text-align:center;
+    padding:70px 50px;
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.85),
+            rgba(80, 5, 12, 0.75)
+        ),
+        url("back.png");
+    background-size:cover;
+    background-position:center;
+    border-radius: 45px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: var(--shadow);
+}
+
+.accion-icono{
+    width:80px;
+    height:80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    border-radius:50%;
+    font-size:38px;
+    color: var(--blanco);
+    background:linear-gradient(
+        135deg,
+        var(--carmesi),
+        var(--ambar)
+    );
+    box-shadow: 0 0 15px rgba(230, 90, 25, 0.4);
+}
+
+.accion-card h3{
+    margin:25px 0 15px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:35px;
+    color:var(--dorado);
+    display:inline-block;
+    padding:10px 30px;
+}
+
+.accion-card p{
+    max-width:550px;
+    margin:auto;
+    padding:20px 30px;
+    line-height:1.9;
+    color:var(--dorado-claro);
+    font-size:20px;
+    background:rgba(11, 8, 9, 0.7);
+    backdrop-filter:blur(8px);
+    border-radius:25px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/*======================================================
+CIERRE FINAL
+======================================================*/
+
+.cierre{
+    min-height:80vh;
+    padding:120px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.cierre-card{
+    max-width:750px;
+    width:100%;
+    text-align:center;
+    padding:70px 50px;
+    background:
+        linear-gradient(
+            rgba(11, 8, 9, 0.85),
+            rgba(80, 5, 12, 0.75)
+        ),
+        url("back.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    backdrop-filter:blur(20px);
+    border-radius:45px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(212, 175, 55, 0.4);
+    position:relative;
+    overflow:hidden;
+}
+
+.flor{
+    width:80px;
+    height:80px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:40px;
+    color:var(--ambar);
+}
+
+.cierre-card span{
+    display:block;
+    text-transform:uppercase;
+    max-width:550px;
+    margin:auto;
+    padding:20px 30px;
+    line-height:1.9;
+    letter-spacing:4px;
+    font-size:13px;
+    color:var(--dorado);
+}
+
+.cierre-card h2{
+    margin:20px 0;
+    font-family:"Cormorant Garamond",serif;
+    font-size:65px;
+    color:var(--dorado);
+    display:inline-block;
+    padding:10px 35px;
+}
+
+.cierre-card h3{
+    margin:20px 0;
+    font-family:"Great Vibes",cursive;
+    font-size:80px;
+    font-weight:400;
+    color:var(--dorado-claro);
+    text-shadow: 0 0 15px rgba(168, 9, 30, 0.6);
+    display:inline-block;
+    padding:10px 35px;
+}
+
+.cierre-card p{
+    max-width:550px;
+    margin:30px auto;
+    padding:20px 30px;
+    font-size:18px;
+    line-height:2;
+    color:var(--dorado-claro);
+    background:rgba(11, 8, 9, 0.7);
+    backdrop-filter:blur(8px);
+    border-radius:25px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.fecha-final{
+    margin-top:35px;
+    padding:15px 35px;
+    display:inline-block;
+    border-radius:50px;
+    color:var(--dorado-claro);
+    letter-spacing:3px;
+    background:rgba(11, 8, 9, 0.8);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--dorado);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.decoracion-final{
+    margin-top:35px;
+    color:var(--dorado);
+    font-size:28px;
+    letter-spacing:15px;
+}
+
+@media(max-width:600px){
+    .cierre-card{
+        padding:50px 25px;
+    }
+
+    .cierre-card h2{
+        font-size:45px;
+    }
+
+    .cierre-card h3{
+        font-size:60px;
+    }
+
+    .cierre-card p{
+        font-size:15px;
+    }
+}
+
+/*======================================================
+FOOTER
+======================================================*/
+
+.luxury-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 28px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.luxury-footer .line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--carmesi),
+        var(--dorado),
+        transparent
+    );
+    opacity: .7;
+}
+
+.luxury-footer p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: .9rem;
+    text-align: center;
+}
+
+.luxury-footer a {
+    color: var(--dorado);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.luxury-footer a:hover {
+    color: var(--dorado-claro);
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+@media (max-width: 600px) {
+    .luxury-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 22px 15px;
+    }
+
+    .luxury-footer .line {
+        width: 100px;
+    }
+}
+
+/* ===== LUCIÉRNAGAS ===== */
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9999;
+}
+
+.star{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:var(--dorado-claro);
+    border-radius:50%;
+    box-shadow:
+        0 0 6px var(--dorado-claro),
+        0 0 12px rgba(230, 90, 25, 0.9),
+        0 0 24px rgba(212, 175, 55, 0.7),
+        0 0 36px rgba(168, 9, 30, 0.5);
+    opacity:1;
+    animation: floatStar linear infinite;
+}
+
+@keyframes floatStar{
+    0%{
+        transform: translateY(110vh);
+    }
+    100%{
+        transform: translateY(-120vh);
+    }
+}
+
+/* BOTÓN DE MÚSICA */
+
+#music-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid var(--dorado);
+    cursor:pointer;
+    background:linear-gradient(135deg, var(--carmesi), var(--borgona));
+    color:white;
+    font-size:24px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 15px rgba(230, 90, 25, 0.4);
+    z-index:99999;
+    transition:.3s;
+}
+
+#music-btn:hover{
+    transform:scale(1.1);
+    background:linear-gradient(135deg, var(--ambar), var(--carmesi));
+    box-shadow: 0 0 20px var(--dorado);
+}
+
+.seccion-imagen {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+.seccion-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 768px) {
+    .seccion-imagen {
+        width: 96%;
+        margin: 25px auto;
+    }
+
+    .seccion-imagen img {
+        border-radius: 20px;
+    }
+}
+
+/* VIDEOS */
+
+video {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Soporte de desenfoque optimizado para Safari / iOS */
+.lugar-card,
+.familia-card,
+.regalos-card,
+.vestimenta-card,
+.accion-card,
+.cierre-card {
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+}
+
+.swiper-button-next,
+.swiper-button-prev,
+.regalos-card p,
+.descripcion-vestimenta,
+.vestimenta-item,
+.accion-card p,
+.cierre-card > p {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
