@@ -92,7 +92,8 @@ body {
 .detalle{
     
    
-    color:var(--carmesi);
+    color:var(--negro-azabache);
+    
     letter-spacing:4px;
     text-transform:uppercase;
     font-size:30px;
@@ -121,26 +122,29 @@ body {
     font-family: "Great Vibes", cursive;
     font-size: 130px;
     font-weight: 100;
-    color: var(--negro-azabache);
+   color: var(--dorado); 
 
-    /* Múltiples capas de sombra para crear la luz roja y dorada */
-    text-shadow: 
-        -1px -1px 0 var(--carmesi),
-         1px -1px 0 var(--carmesi),
-        -1px  1px 0 var(--carmesi),
-         1px  1px 0 var(--carmesi),
-         0 0 20px rgba(168, 9, 30, 0.8),
-         0 0 40px rgba(212, 175, 55, 0.5);
+/* Sombras negras intensas para dar legibilidad */
+text-shadow: 
+    0 2px 4px #000000,                            /* Contorno inmediato muy oscuro */
+    0 0 12px rgba(0, 0, 0, 0.95),                 /* Halo negro denso pegado a la letra */
+    0 5px 25px rgba(0, 0, 0, 1),                  /* Sombra amplia negra profunda */
+    0 0 35px rgba(168, 9, 30, 0.6);               /* Opcional: destello suave rojo carmesí de fondo */
 
-    animation: fadeDown 2s;
+animation: fadeDown 2s;
+
 }
 
 .hero p {
     font-family: "Cormorant Garamond", serif;
     font-size: 32px;
-    color: var(--negro-azabache);
+    color: var(--dorado);
     letter-spacing: 2px;
-    text-shadow: 0 0 8px var(--carmesi), 0 0 15px rgba(212, 175, 55, 0.6);
+    text-shadow: 
+    0 2px 4px #000000,                            /* Contorno inmediato muy oscuro */
+    0 0 12px rgba(0, 0, 0, 0.95),                 /* Halo negro denso pegado a la letra */
+    0 5px 25px rgba(0, 0, 0, 1),                  /* Sombra amplia negra profunda */
+    0 0 35px rgba(168, 9, 30, 0.6);  
     animation: fadeUp 2s;
 }
 
