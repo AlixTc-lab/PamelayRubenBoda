@@ -1079,7 +1079,7 @@ CONFIRMACION
             rgba(11, 8, 9, 0.85),
             rgba(80, 5, 12, 0.75)
         ),
-        url("back.png");
+        url("back.jpg");
     background-size:cover;
     background-position:center;
     border-radius: 45px;
@@ -1149,7 +1149,7 @@ CIERRE FINAL
             rgba(11, 8, 9, 0.85),
             rgba(80, 5, 12, 0.75)
         ),
-        url("back.png");
+        url("back.jpg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
